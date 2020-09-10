@@ -39,17 +39,22 @@ using std::cin; using std::cout; using std::endl;
 int main()
 {
 	// hold the grades we read from the standard input
-	vector<unsigned> grades;
+	vector<unsigned> grades = {42,65,95,100,39,67,95,76,88,76,83,92,76,93};
 
 	// count the number of grades by clusters of ten: 
 	// 0--9, 10--19, . ..  90--99, 100
 	vector<unsigned> scores(11, 0); // 11 buckets, all initially 0
-	unsigned grade;
-	while (cin >> grade) {      // read the grades
-		if (grade <= 100)       // handle only valid grades
-			grades.push_back(grade);
-			++scores[grade/10]; // increment the counter for the current cluster
-	}
+    for(auto grade:grades){
+        if(grade<=100){
+            ++scores[grade/10];
+        }
+    }
+
+//	while (cin >> grade) {      // read the grades
+//		if (grade <= 100)       // handle only valid grades
+//			grades.push_back(grade);
+//			++scores[grade/10]; // increment the counter for the current cluster
+//	}
 	cout << "grades.size = " << grades.size() << endl;
 	for (auto it : grades)
 		cout << it << " " ;

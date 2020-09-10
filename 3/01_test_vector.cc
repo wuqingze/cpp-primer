@@ -11,6 +11,14 @@ using std::cout; using std::endl;
 
 int main(){
 
+    void test10_vector_initialize_struct();
+    test10_vector_initialize_struct();
+    return 0;
+
+    void test09_vector_copy();
+    test09_vector_copy();
+    return 0;
+
     void test08_vector_pushback();
     test08_vector_pushback();
     return 0;
@@ -144,4 +152,48 @@ void test08_vector_pushback(){
         printf("%d,",i);
     }
     printf("\n");
+}
+
+void test09_vector_copy(){
+    People man;
+    man.name = "wuqingze";
+    man.age = 23;
+    man.ginder = "man";
+    man.school.name = "East China Normal University";
+    man.school.is985 = true;
+
+    vector<People> peoples(10, man);
+    vector<People> peoples1 = peoples;
+    peoples1[0].name[0] = 'G';
+
+    for(auto p:peoples){
+        cout<<"name:"<<p.name<<","<<"age:"<<man.age<<","<<"ginder:"<<man.ginder;
+        cout<<"--school.name:"<<man.school.name<<", school.is985:"<<man.school.is985<<endl;
+    }
+    cout<<"-----------------"<<endl;
+    for(auto p:peoples1){
+        cout<<"name:"<<p.name<<","<<"age:"<<man.age<<","<<"ginder:"<<man.ginder<<endl;
+        cout<<"--school.name:"<<man.school.name<<", school.is985:"<<man.school.is985<<endl;
+    }
+}
+
+void test10_vector_initialize_struct(){
+    People man;
+    man.name = "wuqingze";
+    man.age = 23;
+    man.ginder = "man";
+    man.school.name = "East China Normal University";
+    man.school.is985 = true;
+
+    vector<People> peoples(10, man);
+    for(auto p:peoples){
+        cout<<"name:"<<p.name<<","<<"age:"<<man.age<<","<<"ginder:"<<man.ginder;
+        cout<<"--school.name:"<<man.school.name<<", school.is985:"<<man.school.is985<<endl;
+    }
+    cout<<"-----------------"<<endl;
+    string &xx = man.school.name = "tsinghua university";
+    for(auto p:peoples){
+        cout<<"name:"<<p.name<<","<<"age:"<<man.age<<","<<"ginder:"<<man.ginder<<endl;
+        cout<<"--school.name:"<<man.school.name<<", school.is985:"<<man.school.is985<<endl;
+    }
 }

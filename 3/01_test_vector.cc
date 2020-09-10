@@ -11,6 +11,10 @@ using std::cout; using std::endl;
 
 int main(){
 
+    void test08_vector_pushback();
+    test08_vector_pushback();
+    return 0;
+
     void test07_NULL();
     test07_NULL();
     return 0;
@@ -129,4 +133,15 @@ void test07_NULL(){
     }else{
         printf("man is not null\n");
     }
+}
+
+void test08_vector_pushback(){
+    vector<int> v2;
+    for(int i=0;i<100;i++){
+        v2.push_back(i);
+    }
+    for(auto i:v2){
+        printf("%d,",i);
+    }
+    printf("\n");
 }

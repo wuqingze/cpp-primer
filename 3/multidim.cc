@@ -92,6 +92,7 @@ int main()
 	for (const auto &row : ia) // for every element in the outer array
 		for (auto col : row)   // for every element in the inner array
 			cout << col << endl; // print the element's value
+    cout<<"-----------"<<endl;
     cout << ia[0][0] << ' ' << ia[2][3] << endl; // prints 0 11
 
 

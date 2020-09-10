@@ -43,7 +43,7 @@ int main()
 	decltype(sz) i = 0;
 	// duplicate contents of v onto the back of v
 	while (i != sz) {
-		v.push_back(*v.begin() + i);
+		v.push_back(*(v.begin() + i));
 		++i;
 	}
 	// prints 0...9 0...9

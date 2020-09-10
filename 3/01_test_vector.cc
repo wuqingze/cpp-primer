@@ -11,6 +11,14 @@ using std::cout; using std::endl;
 
 int main(){
 
+    void test07_NULL();
+    test07_NULL();
+    return 0;
+
+    void test06_vector_initialize_struct();
+    test06_vector_initialize_struct();
+    return 0;
+
     void test05_vector_initialize_specifield_number_of_elements();
     test05_vector_initialize_specifield_number_of_elements();
     return 0;
@@ -80,3 +88,45 @@ void test05_vector_initialize_specifield_number_of_elements(){
     }
 }
 
+struct People{
+    string name;
+    int age;
+    string ginder;
+    struct University{
+        string name;
+        bool is985;
+    } school;
+};
+
+/**
+ * 目前常见写法仅支持浅程拷贝
+ * */
+void test06_vector_initialize_struct(){
+    People man;
+    man.name = "wuqingze";
+    man.age = 23;
+    man.ginder = "man";
+    man.school.name = "East China Normal University";
+    man.school.is985 = true;
+
+    vector<People> peoples(10, man);
+    for(auto p:peoples){
+        cout<<"name:"<<p.name<<","<<"age:"<<man.age<<","<<"ginder:"<<man.ginder;
+        cout<<"--school.name:"<<man.school.name<<", school.is985:"<<man.school.is985<<endl;
+    }
+    cout<<"-----------------"<<endl;
+    peoples[0].name[0] = 'G';
+    for(auto p:peoples){
+        cout<<"name:"<<p.name<<","<<"age:"<<man.age<<","<<"ginder:"<<man.ginder<<endl;
+        cout<<"--school.name:"<<man.school.name<<", school.is985:"<<man.school.is985<<endl;
+    }
+}
+
+void test07_NULL(){
+    People *man;
+    if(man == NULL){
+        printf("man is null\n");
+    }else{
+        printf("man is not null\n");
+    }
+}

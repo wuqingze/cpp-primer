@@ -70,6 +70,8 @@ int main()
 		cout << "no negative elements in arr" << endl;
 	else
 		cout << "first negative number was " << *pbeg << endl;
+
+    printf("last int:%d\n", *pend);
 	return 0;
 }
 

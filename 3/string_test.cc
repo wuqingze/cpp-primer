@@ -4,13 +4,29 @@ using std::string;
 using std::cout;
 using std::cin;
 using std::endl;
+using std::getline;
 
 int main(){
-    string s1, s2;
-    while(cin>> s1 >> s2){
-        cout<<"s1:" << s1 << ",s2:" << s2 << endl;
+
+    string s1;
+    if(s1.empty()){
+        cout<<"null"<<endl;
+    }else{
+        cout<<"not null"<<endl;
     }
+
     return 0;
+
+//    while(getline(cin, s1)){
+//        cout<<s1<<endl;
+//    }
+//    return 0;
+
+//    string s1, s2;
+//    while(cin>> s1 >> s2){
+//        cout<<"s1:" << s1 << ",s2:" << s2 << endl;
+//    }
+//    return 0;
 
 //    char *s1, *s2;
 //    printf("hello world\n");

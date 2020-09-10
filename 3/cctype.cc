@@ -69,7 +69,8 @@ int main()
 
 	    // s[index] returns a reference so we can change 
 		// the underlying character
-		s[index] = toupper(s[index]);
+		// s[index] = toupper(s[index]);
+		s[index] = tolower(s[index]);
 
 		// increment the index to look at the next character 
 		// on the next iteration

@@ -46,10 +46,13 @@ int main()
 	string result;        // will hold the resulting hexify'd string
 
 	string::size_type n;  // hold numbers from the input
-	while (cin >> n)
+	while (cin >> n){
+        cout<<n<<endl;
 		if (n < hexdigits.size())    // ignore invalid input
 			result += hexdigits[n];  // fetch the indicated hex digit
-
+        else
+            break;
+    }
 	cout << "Your hex number is: " << result << endl;
 
 	return 0;

@@ -57,7 +57,8 @@ int main()
 	for (auto &c : s)   // for every char in s (note: c is a reference)
 		// c is a reference, so this assignment changes the char in s
 		c = toupper(c);
-	cout << s << endl;
+	cout <<"s:"<< s << endl;
+	cout <<"orig:"<< orig << endl;
 	
 	// convert first word in s to uppercase
 	s = orig;  // restore s to original case

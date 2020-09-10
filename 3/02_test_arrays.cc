@@ -11,6 +11,10 @@ using std::cout; using std::endl;
 
 int main(){
 
+    void test03_array_negative_subscript();
+    test03_array_negative_subscript();
+    return 0;
+
     void test02_reference(int *i);
     int i = 1;
     printf("before foo i:%d\n", i);
@@ -39,4 +43,11 @@ void test01_arrays_special(){
 
 void test02_reference(int *i){
     *i = 1024;
+}
+
+void test03_array_negative_subscript(){
+    int p[] = {1,2};
+    printf("p[0]:%d\n", p[0]);
+    printf("p[1]:%d\n", p[1]);
+    printf("p[-1]:%d\n", p[-1]);
 }
